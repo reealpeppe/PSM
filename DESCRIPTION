@@ -1,0 +1,14 @@
+Package: PSM
+Type: Package
+Title: Partial Splines Models
+Version: 0.1.0
+Author: Salvatore Mirlocca, Giuseppe Reale
+Maintainer: Salvatore Mirlocca <salvatore.mirlocca@you.unipa.it>, Giuseppe Reale <giuseppe.reale97@gmail.com>
+Description: Estimates partial splines models 
+License: \
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    graphics,
+    splines
+RoxygenNote: 7.1.1.9001
