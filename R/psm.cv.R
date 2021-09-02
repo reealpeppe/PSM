@@ -75,7 +75,7 @@ psm.cv <- function(y, x, tx, k.fold = 4, alpha.v = c(0.0001, 0.001, 0.01, 0.1),
   out <- list(alpha.opt = tbl[best, 1], knots.opt = tbl[best,
                                                         2], table = tbl)
   if (plot.it) {
-    cex.plot <- tbl$mse/mean(tbl$mse)
+    cex.plot <- tbl$mse/max(tbl$mse) + .7
     plot(tbl[, 1], tbl[, 2], cex = cex.plot, pch = 16, xlab = "alpha",
          ylab = "Prop. knots")
     points(tbl[best, 1], tbl[best, 2], cex = (cex.plot[best] +
