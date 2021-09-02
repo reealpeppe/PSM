@@ -18,7 +18,7 @@
 #' tx <- rnorm(100)
 #' eps <- rnorm(100)
 #' y <- x[,1] + tx^4 + eps
-#' cv <- psm.cv(y, x, tx, alpha.v = c(.4, .5), knots.v = c(.2, .3))
+#' cv <- psm.cv(y, x, tx)
 #' alpha <- cv$alpha.opt
 #' prop.knots <- cv$knots.opt
 #'
@@ -56,7 +56,7 @@ psm.cv <- function(y, x, tx, k.fold = 4, alpha.v = c(0.0001, 0.001, 0.01, 0.1),
 
       train.psm <- PartialSplines(y[-c(i1:i2), , drop = F],
                                   x[-c(i1:i2), , drop = F], tx[-c(i1:i2)], alpha = alpha,
-                                  prop.knots = knots, ...)
+                                  prop.knots = knots, trace = F, ...)
       pred <- predict(train.psm, x = x[i1:i2, , drop = F],
                       tx = tx[i1:i2])
       eqm.i <- eqm.i + crossprod(y[i1:i2] - pred)

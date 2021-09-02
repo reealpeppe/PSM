@@ -44,7 +44,7 @@ x <- data.frame(x = rnorm(100))
 tx <- rnorm(100)
 eps <- rnorm(100)
 y <- x[,1] + tx^4 + eps
-cv <- psm.cv(y, x, tx, alpha.v = c(.4, .5), knots.v = c(.2, .3))
+cv <- psm.cv(y, x, tx)
 alpha <- cv$alpha.opt
 prop.knots <- cv$knots.opt
 
