@@ -29,9 +29,10 @@ print.PSM <- function(object, ...) {
   b.out['Std. Error'] <- b.inf[ ,2] ; b.out['t value'] <- b.inf[,3]
   b.out['Pr(>|t|)'] <- p.values
   b.out[' '] = ifelse(p.values < 0.001, "***", ifelse(p.values < 0.01, "**", ifelse(p.values < 0.05, "*", ifelse(p.values < 0.1, ".", " "))))
+  rownames(b.out) <- names(coef(mod))
 
-  print.data.frame(b.out, row.names = F, ...)
+  print.data.frame(b.out, digits = 3, ...)
   cat('\nCoefficients Delta: \n')
-  print(d, ...)
+  print(d, digits = 3, ...)
   cat('\nwith parameters:\nAlpha: ', alpha, '\nProportion of knots: ', p.knots)
 }
