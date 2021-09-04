@@ -135,7 +135,8 @@ PartialSplines <- function(y, x, tx, prop.knots = NULL, intercept = T, n.basis =
   details <- list(knots.basis = nodi, intercept = intercept, N = N,
                   coef.names = coef.names, mod = mod, n.obs = n)
 
-  out = list(beta = b.new, delta = d.new, call = cl, Z = Z, y = y, X = X, tx = tx,
+
+  out = list(beta = coef(mod), delta = as.vector(d.new), call = cl, Z = Z, y = y, X = X, tx = tx,
              data = x, r = r, K = K, time = tempo, iter = iter, alpha = alpha,
              prop.knots = prop.knots, details = details)
   attr(out, which = 'class') <- 'PSM'
