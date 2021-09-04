@@ -4,10 +4,12 @@
 \alias{plot.PSM}
 \title{Plot for a PSM object}
 \usage{
-\method{plot}{PSM}(object, ...)
+\method{plot}{PSM}(object, legend.pos = "topleft", ...)
 }
 \arguments{
 \item{object}{an object of class 'PSM'}
+
+\item{legend.pos}{position of the legend. Can be moved according to points position}
 
 \item{...}{further arguments passed to the generic 'plot' function}
 }
