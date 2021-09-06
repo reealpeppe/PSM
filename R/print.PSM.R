@@ -32,7 +32,9 @@ print.PSM <- function(object, ...) {
   rownames(b.out) <- names(coef(mod))
 
   print.data.frame(b.out, digits = 3, ...)
+  cat('\n', "Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1", sep = '', '\n')
+
   cat('\nCoefficients Delta: \n')
   print(d, digits = 3, ...)
-  cat('\nwith parameters:\nAlpha: ', alpha, '\nProportion of knots: ', p.knots)
+  cat('\nwith parameters:\nAlpha: ', alpha, '\nProportion of knots: ', p.knots, '\nNumber of basis: ', length(d))
 }

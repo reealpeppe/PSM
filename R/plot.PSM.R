@@ -21,7 +21,7 @@ plot.PSM <- function(object, legend.pos = 'topleft', ...) {
   y.hat <- fitted(object)
   tx <- object$tx
   res <- y - y.hat
-  plot(res, ylab = "Residuals")
+  plot(y.hat, res, xlab = expression(hat(y)), ylab = "Residuals")
   abline(h = 0, col = 2)
   readline(prompt = "Type <Enter> to go to the next plot: ")
   plot(tx, y, main = 'Fitted vs observed values', ...)
